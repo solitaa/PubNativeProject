@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="class.js"></script>
+		<script src="utility.js"></script>
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="menu">
+				<div class="menu_item">
+					<button id="play_pause">Pause</button>
+					<button id="reverse">Reverse</button>
+				</div>
+				<div class="menu_item">
+					<input type="range" id="range" min="0" max="500" value="0" step="1">
+				</div>
+				<div class="menu_item">
+					<span>Iterations: </span>
+					<input type="radio" name="iteration_count" id="l1" value="infinite" checked><label for="l1">Infinite</label>
+					<input type="radio" name="iteration_count" id="l2" value="1"><label for="l2">One Time</label>
+				</div>
+				<div class="menu_item">
+					<span>Time: </span>
+					<input type="radio" name="duration" id="d1" value="2" checked><label for="d1">2s</label>
+					<input type="radio" name="duration" id="d2" value="4"><label for="d2">4s</label>
+					<input type="radio" name="duration" id="d3" value="6"><label for="d3">6s</label>
+				</div>
+				<div class="menu_item">
+					<span>Speed: </span>
+					<input type="radio" name="fixed_speed" id="f1" value="1" checked><label for="f1">Fixed</label>
+					<input type="radio" name="fixed_speed" id="f2" value="0"><label for="f2">Depending on percentage</label>
+				</div>
+				<div class="menu_item">
+					<h4 id="keyframe_title">Keyframes</h4>
+				</div>
+				<div class="menu_item" >
+					<table id="keyframes_table">
+						<thead>
+							<tr>
+								<th>
+									<div class="tooltip">Top
+										<span class="tooltiptext tooltip-top">The value of the top position should be in 0 - 550 range. Otherwise the keyframe will be ignored.</span>
+									</div>
+								</th>
+								<th>
+									<div class="tooltip">Left
+										<span class="tooltiptext tooltip-top">The value of the left position should be in 0 - 550 range. Otherwise the keyframe will be ignored.</span>
+									</div>
+								</th>
+								<th>
+									<div class="tooltip">Color
+									</div>
+								</th>
+								<th>
+									<div class="tooltip">Angle
+										<span class="tooltiptext tooltip-top">The angle should be in 0 - 360 range. Otherwise the keyframe will be ignored.</span>
+									</div>
+								</th>
+								<th>
+									<div class="tooltip">Percent
+										<span class="tooltiptext tooltip-top">The percent value should be exactly 100, otherwise the new animation will not be processed.</span>
+									</div>
+								</th>
+								<th>
+									<div class="tooltip">Action
+										<span class="tooltiptext tooltip-top">Add or remove keyframes. Two keyframes are required, otherwise the new animation will not be processed.</span>
+									</div>
+								</th>
+							</tr>
+						</thead>
+						<tbody id="keyframes_table_body">
+							<tr id="add_keyframe">
+								<td>
+									<input type="number" name="left" placeholder="0-550 " min="0" max="550">
+								</td>
+								<td>
+									<input type="number" name="top" placeholder="0-550" min="0" max="550">
+								</td>
+								<td>
+									<input type="color" name="color" value="#000000">
+								</td>
+								<td>
+									<input type="number" name="angle" placeholder="0-360" min="0" max="360">
+								</td>
+								<td>
+									<input type="number" name="percent" placeholder="%" min="0" max="100">
+								</td>
+								<td>
+									<span class="add_keyframe_btn">+</span>
+								</td>
+								</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="menu_item">
+					<button id="apply">Apply</button>
+				</div>
+			</div>
+			<div id="canvas">
+				<div id="object">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
